@@ -26,7 +26,7 @@ $("#bt1").on('click', function () {
     var valordeclarado = $('input[name="valorDeclarado"]').val();
     var avisoRecebimento = $('input[name="avisoRec"]').val();
 
-    var url = "http://usysweb.com.br/api/correiosambev.php";
+    var url = "https://usysweb.com.br/api/correiosambev.php";
     var dataSent = `nCdEmpresa=08082650&sDsSenha=564321&` +
         `sCepOrigem=${cepOrigem}&sCepDestino=${cepDestino}&` +
         `nVlPeso=${peso}&nCdFormato=1&nVlComprimento=${comprimento}&nVlAltura=${altura}&nVlLargura=${largura}&` +
@@ -35,14 +35,15 @@ $("#bt1").on('click', function () {
 
     $.get(url, dataSent, function (data, status, xhr) {
         console.log(data);
-        LimparTela();
+        //LimparTela();
+        var dataJson = JSON.parse(data);
 
-        $('span[name="prazo"]').text(data.Prazo);
-        $('span[name="valor"]').text(data.Valor);
+
+        $('span[name="prazo"]').text(dataJson.cServico.PrazoEntrega);
+        $('span[name="valor"]').text(dataJson.cServico.Valor);
         $('span[name="destino"]').text(cepDestino);
-        $('span[name="entregaPessoalmente"]').text(data.EntregaDomiciliar);
-
-        
+        $('span[name="entregaPessoalmente"]').text(dataJson.cServico.EntregaDomiciliar);
+       
     });
 
 
