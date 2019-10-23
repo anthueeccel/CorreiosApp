@@ -70,6 +70,7 @@
     <Content Include="2ndIndex.html" />
     <Content Include="css\styles.css" />
     <Content Include="index.html" />
+    <Content Include="indexResult.html" />
     <Content Include="js\scripts.js" />
     <Content Include="Web.config" />
   </ItemGroup>
