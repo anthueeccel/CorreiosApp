@@ -1,10 +1,96 @@
 ﻿<!DOCTYPE html>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> EntregasCorreio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+    <div class="container-fluid h-100">
+        <div class="row d-flex align-content-center justify-content-center h-100">
+            <div class="col-md-3">
+                <img src="https://i.gifer.com/AyeK.gif" image-size: class="hidden" id="Unicorn">
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Prazo</span>
+                        </div>
+                        <input type="text" class="form-control" name="prazo" id="prazo" placeholder="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Valor</span>
+                        </div>
+                        <input type="text" class="form-control" name="valor" id="valor" placeholder="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Cidade</span>
+                        </div>
+                        <input type="text" class="form-control" name="cidade" id="cidade" placeholder="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Bairro</span>
+                        </div>
+                        <input type="text" class="form-control" name="bairro" id="bairro" placeholder="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Logradouro</span>
+                        </div>
+                        <input type="text" class="form-control" name="logradouro" id="logradouro" placeholder="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Entregar Pessoalmente</span>
+                        </div>
+                        <input type="text" class="form-control" name="entregaPessoalmente" id="entregaPessoalmente" placeholder="" />
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        $.fn.center = function () {
+            this.css("position", "absolute");
+            this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+            this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+            return this;
+        }
+        $("#bt1").on("click", function () {
+            $("#Unicorn").fadeIn().center();
+            setTimeout(function () {
+                $("#Unicorn").fadeOut()
+            }, 3000);
+
+        });
+    </script>
 
 </body>
 </html>
