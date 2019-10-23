@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
 
-
+    var url = window.location;
+    var prazo = url
 
 
 

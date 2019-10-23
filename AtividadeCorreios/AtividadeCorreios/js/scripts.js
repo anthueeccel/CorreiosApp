@@ -37,7 +37,7 @@ $("#bt1").on('click', function () {
     $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
         console.log(data);
 
-        $('input[name="localidade"]').val(data.localidade);
+        $('input[name="cidade"]').val(data.localidade);
         $('input[name="bairro"]').val(data.bairro);
         $('input[name="logradouro"]').val(data.logradouro);
         $('span[name="cidade"]').text(data.localidade);
@@ -56,17 +56,15 @@ $("#bt1").on('click', function () {
         $('span[name="valor"]').text(dataJson.cServico.Valor);
         $('span[name="entregaPessoalmente"]').text(dataJson.cServico.EntregaDomiciliar);
                   
-    });
-    $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
-        console.log(data);
-
-        $('input[name="cidade"]').val(data.localidade);
-        $('input[name="bairro"]').val(data.bairro);
-        $('input[name="logradouro"]').val(data.logradouro);
-        $('span[name="cidade"]').text(data.localidade);
-        $('span[name="bairro"]').text(data.bairro);
-        $('span[name="logradouro"]').text(data.logradouro);
-
+        var urlResult = `indexResult.html?`;
+        var dataResult = `prazo=${dataJson.cServico.PrazoEntrega}&valor=${dataJson.cServico.Valor}&entregaPessoalmente=${dataJson.cServico.EntregaDomiciliar}`;
+        //& cidade=${ cidade }& bairro=${ bairro }& logradouro=${ logradouro }`;
+        window.location = urlResult + dataResult;
     });
 
+
+
+
+
+   
 });
