@@ -43,24 +43,18 @@ $("#bt1").on('click', function () {
         $('span[name="valor"]').text(dataJson.cServico.Valor);
         $('span[name="entregaPessoalmente"]').text(dataJson.cServico.EntregaDomiciliar);
 
-        localStorage.setItem("prazoEntrega", dataJson.cServico.PrazoEntrega);
-        localStorage.setItem("valor", dataJson.cServico.Valor);
-        localStorage.setItem("cepDestino", cepDestino);
-        localStorage.setItem("entregaDomiciliar", dataJson.cServico.EntregaDomiciliar);
-        window.open('indexResult.html');
-        localStorage.setItem("prazoEntrega", dataJson.cServico.PrazoEntrega);
-        localStorage.setItem("valor", dataJson.cServico.Valor);
-        localStorage.setItem("cepDestino", cepDestino);        localStorage.setItem("entregaDomiciliar", dataJson.cServico.EntregaDomiciliar);      
+        
     });
     $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
         console.log(data)
 
-        $('input[name="localidade"]').val(data.localidade)
+        $('input[name="cidade"]').val(data.localidade)
         $('input[name="bairro"]').val(data.bairro)
         $('input[name="logradouro"]').val(data.logradouro)
         $('span[name="cidade"]').text(data.localidade);
         $('span[name="bairro"]').text(data.bairro);
         $('span[name="logradouro"]').text(data.logradouro);
+        I
 
     });
 

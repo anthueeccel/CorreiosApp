@@ -76,21 +76,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-    <script>
-        $.fn.center = function () {
-            this.css("position", "absolute");
-            this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
-            this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
-            return this;
-        }
-        $("#bt1").on("click", function () {
-            $("#Unicorn").fadeIn().center();
-            setTimeout(function () {
-                $("#Unicorn").fadeOut()
-            }, 3000);
 
-        });
-    </script>
 
 </body>
 </html>
