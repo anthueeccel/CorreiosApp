@@ -6,15 +6,15 @@ function LimparTela() {
     var meusInputs = $('input[type="text"]');
     meusInputs.val("");
 }
-$(document).on('keypress', function (e) {
-    if (e.which == 13) {
-        $('input[type="button"]').click();
-    }
-});
+//$(document).on('keypress', function (e) {
+//    if (e.which == 13) {
+//        $('input[type="button"]').click();
+//    }
+//});
 
 
 
-$(document).on('click', function () {
+$("#bt1").on('click', function () {
 
     var cepOrigem = $('input[name="cepOrigem"]').val();
     var cepDestino = $('input[name="cepDestino"]').val();
@@ -26,18 +26,23 @@ $(document).on('click', function () {
     var valordeclarado = $('input[name="valorDeclarado"]').val();
     var avisoRecebimento = $('input[name="avisoRec"]').val();
 
-    
-
     var url = "http://usysweb.com.br/api/correiosambev.php";
-    var dataSent = "nCdEmpresa=08082650&sDsSenha=564321&" +
+    var dataSent = `nCdEmpresa=08082650&sDsSenha=564321&` +
         `sCepOrigem=${cepOrigem}&sCepDestino=${cepDestino}&` +
         `nVlPeso=${peso}&nCdFormato=1&nVlComprimento=${comprimento}&nVlAltura=${altura}&nVlLargura=${largura}&` +
         `sCdMaoPropria=${maoPropria}&nVlValorDeclarado=${valordeclarado}&sCdAvisoRecebimento=${avisoRecebimento}&` +
-        "nCdServico=04510&nVlDiametro=0&StrRetorno=xml&nIndicaCalculo=3";
+        `nCdServico=04510&nVlDiametro=0&StrRetorno=xml&nIndicaCalculo=3`;
 
-    $.get(url, dataSent, function (data, status, xhr) {
+    $.get(url, dataSent, function (data, status, xhr) {             
+        alert(data);
+        LimparTela();
 
-        console.log(data);
+        $('span[name="prazo"]').text(data.Prazo);
+        $('span[name="valor"]').text(data.Valor);
+        $('span[name="destino"]').text(cepDestino);
+        $('span[name="entregaPessoalmente"]').text(data.EntregaDomiciliar);
+
+        $("#exampleModal").modal("toggle");
     });
 
 
