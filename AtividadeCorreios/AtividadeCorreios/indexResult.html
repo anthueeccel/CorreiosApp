@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <div class="container-fluid h-100">
+    <div id="fromWindow" class="container-fluid h-100">
         <div class="row d-flex align-content-center justify-content-center h-100">
             <div class="col-md-3">
                 <img src="https://i.gifer.com/AyeK.gif" image-size: class="hidden" id="Unicorn">
@@ -64,7 +64,7 @@
                         </div>
                         <input type="text" class="form-control" name="entregaPessoalmente" id="entregaPessoalmente" placeholder="" />
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
@@ -75,22 +75,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <script>
-        $.fn.center = function () {
-            this.css("position", "absolute");
-            this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
-            this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
-            return this;
-        }
-        $("#bt1").on("click", function () {
-            $("#Unicorn").fadeIn().center();
-            setTimeout(function () {
-                $("#Unicorn").fadeOut()
-            }, 3000);
+    <script src="js/scripts2.js"></script>
 
-        });
-    </script>
 
 </body>
 </html>

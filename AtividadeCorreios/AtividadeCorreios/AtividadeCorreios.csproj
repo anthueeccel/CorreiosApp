@@ -72,6 +72,7 @@
     <Content Include="index.html" />
     <Content Include="indexResult.html" />
     <Content Include="js\scripts.js" />
+    <Content Include="js\scripts2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
