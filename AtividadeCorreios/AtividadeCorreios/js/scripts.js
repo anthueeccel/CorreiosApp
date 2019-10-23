@@ -1,13 +1,7 @@
 ﻿$(document).ready(function () {
-
     $("#cepOrigem").mask("99999-999");
     $("#cepDestino").mask("99999-999");
 });
-
-let data;
-let dataJson;
-
-
 function LimparTela() {
     var meusInputs = $('input[type="text"]');
     meusInputs.val("");
@@ -19,8 +13,8 @@ function LimparTela() {
 //});
 
 
+
 $("#bt1").on('click', function () {
- 
 
     var cepOrigem = $('input[name="cepOrigem"]').val();
     var cepDestino = $('input[name="cepDestino"]').val();
@@ -61,19 +55,17 @@ $("#bt1").on('click', function () {
         $('span[name="prazo"]').text(dataJson.cServico.PrazoEntrega + " dias");
         $('span[name="valor"]').text(dataJson.cServico.Valor);
         $('span[name="entregaPessoalmente"]').text(dataJson.cServico.EntregaDomiciliar);
+                  
+    });
+    $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
+        console.log(data)
 
-
-    var prazo = dataJson.cServico.PrazoEntrega;
-    var valor = dataJson.cServico.Valor;
-    var engtregaPessoamente = dataJson.cServico.EntregaDomiciliar;
-    var cidade = data.localidade;
-    var bairro = data.bairro;
-    var logradouro = logradouro;
-
-    var urlResult = `indexResult.html?`;
-        var dataResult = `prazo=${prazo}&valor=${valor}`;
-        //& cidade=${ cidade }& bairro=${ bairro }& logradouro=${ logradouro }& entregaPessoalmente=${ engtregaPessoamente }`;
-    window.location = urlResult + dataResult;
+        $('input[name="cidade"]').val(data.localidade)
+        $('input[name="bairro"]').val(data.bairro)
+        $('input[name="logradouro"]').val(data.logradouro)
+        $('span[name="cidade"]').text(data.localidade);
+        $('span[name="bairro"]').text(data.bairro);
+        $('span[name="logradouro"]').text(data.logradouro);
 
     });
 
