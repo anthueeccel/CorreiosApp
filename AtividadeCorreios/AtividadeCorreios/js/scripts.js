@@ -37,15 +37,27 @@ $("#bt1").on('click', function () {
         console.log(data);
         //LimparTela();
         var dataJson = JSON.parse(data);
+        var hoje = new Date().getDate();
 
-
-        $('span[name="prazo"]').text(dataJson.cServico.PrazoEntrega);
+        $('span[name="prazo"]').text(dataJson.cServico.PrazoEntrega +" dias");
         $('span[name="valor"]').text(dataJson.cServico.Valor);
-        $('span[name="destino"]').text(cepDestino);
         $('span[name="entregaPessoalmente"]').text(dataJson.cServico.EntregaDomiciliar);
        
-    });
 
+        
+
+    });
+    $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
+        console.log(data)
+
+        $('input[name="localidade"]').val(data.localidade)
+        $('input[name="bairro"]').val(data.bairro)
+        $('input[name="logradouro"]').val(data.logradouro)
+        $('span[name="cidade"]').text(data.localidade);
+        $('span[name="bairro"]').text(data.bairro);
+        $('span[name="logradouro"]').text(data.logradouro);
+
+    });
 
 
 });
