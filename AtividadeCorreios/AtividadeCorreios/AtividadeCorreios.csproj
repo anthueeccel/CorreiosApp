@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2ndIndex.html" />
     <Content Include="index.html" />
+    <Content Include="js\scripts.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
