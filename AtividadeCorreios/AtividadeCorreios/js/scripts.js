@@ -12,8 +12,6 @@ function LimparTela() {
 //    }
 //});
 
-
-
 $("#bt1").on('click', function () {
 
     var cepOrigem = $('input[name="cepOrigem"]').val();
@@ -61,10 +59,5 @@ $("#bt1").on('click', function () {
         //& cidade=${ cidade }& bairro=${ bairro }& logradouro=${ logradouro }`;
         window.location = urlResult + dataResult;
     });
-
-
-
-
-
    
 });
