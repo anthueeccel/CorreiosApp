@@ -38,12 +38,21 @@ $("#bt1").on('click', function () {
         //LimparTela();
         var dataJson = JSON.parse(data);
 
-
         $('span[name="prazo"]').text(dataJson.cServico.PrazoEntrega);
         $('span[name="valor"]').text(dataJson.cServico.Valor);
         $('span[name="destino"]').text(cepDestino);
         $('span[name="entregaPessoalmente"]').text(dataJson.cServico.EntregaDomiciliar);
-       
+        
+        localStorage.setItem("prazoEntrega", dataJson.cServico.PrazoEntrega);
+        localStorage.setItem("valor", dataJson.cServico.Valor);
+        localStorage.setItem("cepDestino", cepDestino);
+        localStorage.setItem("entregaDomiciliar", dataJson.cServico.EntregaDomiciliar);
+        window.open('indexResult.html');
+        localStorage.setItem("prazoEntrega", dataJson.cServico.PrazoEntrega);
+        localStorage.setItem("valor", dataJson.cServico.Valor);
+        localStorage.setItem("cepDestino", cepDestino);
+        localStorage.setItem("entregaDomiciliar", dataJson.cServico.EntregaDomiciliar);
+
     });
 
 
