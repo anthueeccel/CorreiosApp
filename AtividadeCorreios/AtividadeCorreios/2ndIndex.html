@@ -10,7 +10,24 @@
 <body>
     <div class="container-fluid h-100">
         <div class="row d-flex align-content-center justify-content-center h-100">
+            
             <div class="col-md-3">
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Login</span>
+                        </div>
+                        <input type="text" class="form-control" name="cepOrigem" id="cepOrigem" placeholder="login (empresas cadastradas)" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Senha</span>
+                        </div>
+                        <input type="text" class="form-control" name="cepOrigem" id="cepOrigem" placeholder="********" />
+                    </div>
+                </div>
                 <div class="row">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -33,6 +50,22 @@
                             <span class="input-group-text">CEP Destino</span>
                         </div>
                         <input type="text" class="form-control" name="cepDestino" id="cepDestino" placeholder="CEP Entrega" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Entrega</span>
+                        </div>
+                        <select id="codServico">
+                            <option value="04014">SEDEX à vista</option>
+                            <option value="04065">SEDEX à vista pagamento na entrega</option>
+                            <option value="04510">PAC à vista</option>
+                            <option value="04707">PAC à vista pagamento na entrega</option>
+                            <option value="40169">SEDEX 12 ( à vista e a faturar)*</option>
+                            <option value="40215">SEDEX 10 (à vista e a faturar)*</option>
+                            <option value="40290">SEDEX Hoje Varejo*</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
@@ -76,8 +109,8 @@
                             <span class="input-group-text">Aviso de Recebimento</span>
                         </div>
                         <select id="avisoRec">
-                            <option value="1">Sim</option>
-                            <option value="2">Não</option>
+                            <option value="S">Sim</option>
+                            <option value="N">Não</option>
                         </select>
                     </div>
                 </div>
@@ -86,7 +119,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Valor Declarado</span>
                         </div>
-                        <input type="text" class="form-control" name="valorDeclarado" value="" />
+                        <input type="number" class="form-control" name="valorDeclarado" value="" /> <!--informar '0' = não-->
                     </div>
                 </div>
                 <div class="row">
