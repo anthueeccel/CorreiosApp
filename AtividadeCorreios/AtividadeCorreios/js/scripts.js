@@ -42,7 +42,7 @@ $("#bt1").on('click', function () {
         $('span[name="destino"]').text(cepDestino);
         $('span[name="entregaPessoalmente"]').text(data.EntregaDomiciliar);
 
-        $("#exampleModal").modal("toggle");
+        
     });
 
 
