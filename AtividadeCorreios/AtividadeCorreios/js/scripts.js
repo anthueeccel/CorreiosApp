@@ -33,8 +33,8 @@ $("#bt1").on('click', function () {
         `sCdMaoPropria=${maoPropria}&nVlValorDeclarado=${valordeclarado}&sCdAvisoRecebimento=${avisoRecebimento}&` +
         `nCdServico=04510&nVlDiametro=0&StrRetorno=xml&nIndicaCalculo=3`;
 
-    $.get(url, dataSent, function (data, status, xhr) {             
-        alert(data);
+    $.get(url, dataSent, function (data, status, xhr) {
+        console.log(data);
         LimparTela();
 
         $('span[name="prazo"]').text(data.Prazo);
