@@ -58,11 +58,11 @@ $("#bt1").on('click', function () {
                   
     });
     $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
-        console.log(data)
+        console.log(data);
 
-        $('input[name="cidade"]').val(data.localidade)
-        $('input[name="bairro"]').val(data.bairro)
-        $('input[name="logradouro"]').val(data.logradouro)
+        $('input[name="cidade"]').val(data.localidade);
+        $('input[name="bairro"]').val(data.bairro);
+        $('input[name="logradouro"]').val(data.logradouro);
         $('span[name="cidade"]').text(data.localidade);
         $('span[name="bairro"]').text(data.bairro);
         $('span[name="logradouro"]').text(data.logradouro);
