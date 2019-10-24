@@ -1,37 +1,23 @@
 ﻿$(document).ready(function () {
     $("#cepOrigem").mask("99999-999");
     $("#cepDestino").mask("99999-999");
-});
-function LimparTela() {
-    var meusInputs = $('input[type="text"]');
-    meusInputs.val("");
-}
 
-
-
-$(document).on('click', function () {
-    $('input[name="btnconsultar"]').on('click', function () {
-        var informacoes = $('form[name=formenviar]').serializeArray();
+    $('input[name="bt1"]').click(function () {
+        var informacoes = $('form[name="formenviar"]').serializeArray();
         var obterAtributo = $('form[name="formenviar"]').attr('send-post');
 
-        $.post("http://usyweb,com.br/api/" + obteratributo + ".php?giomar=true" + informacoes);
-        dete = JSON.parse(data);
+        $.post("http://usysweb.com.br/api/" + obterAtributo + ".php?giomar=true", informacoes, function (data) {
+            data = JSON.parse(data);
+            console.log(data);
+            $.each(data.cServico, function (key, value) {
 
-        $.each(data.cServico, function (key, valeu) {
-
-            $('p[name="{key}"]'.replace("{key}", key)).text(value);
+                $('p[name="{key}"'.replace("{key}", key)).text(value);
+            });
         });
     });
+
 });
 
-
-
-
-//$(document).on('keypress', function (e) {
-//    if (e.which == 13) {
-//        $('input[type="button"]').click();
-//    }
-//});
 
 //$("#bt1").on('click', function () {
 
@@ -51,7 +37,7 @@ $(document).on('click', function () {
 //        `nVlPeso=${peso}&nCdFormato=1&nVlComprimento=${comprimento}&nVlAltura=${altura}&nVlLargura=${largura}&` +
 //        `sCdMaoPropria=${maoPropria}&nVlValorDeclarado=${valordeclarado}&sCdAvisoRecebimento=${avisoRecebimento}&` +
 //        `nCdServico=04510&nVlDiametro=0&StrRetorno=xml&nIndicaCalculo=3`;
-       
+
 
 //    $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
 //        console.log(data);
@@ -65,7 +51,7 @@ $(document).on('click', function () {
 
 //    });
 
-   
+
 //    $.get(url, dataSent, function (data, status, xhr) {
 //        console.log(data);
 //        //LimparTela();
@@ -81,12 +67,7 @@ $(document).on('click', function () {
 //            `&valor=${dataJson.cServico.Valor}` +
 //            `&entregaPessoalmente=${dataJson.cServico.EntregaDomiciliar}` +
 //            `&cepDestino=${cepDestino}`;
-//        window.location = urlResult + dataResult;
-
-      
-
+//        window.location = urlResult + dataResult;  
 
 //    });
-
-       
 //});
