@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
 
     var url = window.location;
-    var prazo = url
+    var prazo = url.split('','');
 
 
 
