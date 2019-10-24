@@ -31,4 +31,9 @@
     //$('input[name="logradouro"]').val('c');
     $('input[name="entregaPessoalmente"]').val(entregaPessoalmente);
 
+
+    $("#bt2").on('click', function () {
+    window.history.back();
+    });
+
 });
