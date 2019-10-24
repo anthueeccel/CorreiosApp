@@ -11,7 +11,13 @@ $('input[name="bt1"]').on('click', function () {
         data = JSON.parse(data);
         console.log(data);
         $.each(data.cServico, function (key, value) {
-            $('p[name="{key}"'.replace("{key}", key)).text(value);
+            if (key === "EntregaDomiciliar") {
+                if (value === "S")
+                    value = "Sim";
+                else
+                    value = "Não";
+            }
+            $('span[name="{key}"'.replace("{key}", key)).text(value);
         });
     });
 });
@@ -23,23 +29,6 @@ function LimparTela() {
 }
 
 
-
-$(document).on('click', function () {
-    $('input[name="btnconsultar"]').on('click', function () {
-        var informacoes = $('form[name=formenviar]').serializeArray();
-        var obterAtributo = $('form[name="formenviar"]').attr('send-post');
-
-        $.post("http://usyweb,com.br/api/" + obteratributo + ".php?giomar=true" + informacoes);
-        dete = JSON.parse(data);
-
-        $.each(data.cServico, function (key, valeu) {
-
-            $('p[name="{key}"]'.replace("{key}", key)).text(value);
-        });
-    });
-});
-
-});
 
 
 //$("#bt1").on('click', function () {
