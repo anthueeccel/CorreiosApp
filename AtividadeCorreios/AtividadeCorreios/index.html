@@ -1,18 +1,5 @@
 ﻿<!DOCTYPE html>
-<style>
-    .hidden {
-        display: none;
-    }
-    .center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); /* Yep! */
-  width: 48%;
-  height: 59%;
-}
-    
-</style>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -25,156 +12,131 @@
     <div class="container-fluid h-100">
         <div class="row d-flex align-content-center justify-content-center h-100">
             <div class="col-md-3">
-                <!--<div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Login</span>
-                        </div>
-                        <input type="text" class="form-control" name="empresaLogin" id="empresaLogin" placeholder="login (empresas cadastradas)" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Senha</span>
-                        </div>
-                        <input type="text" class="form-control" name="empresaPW" id="empresaPW" placeholder="********" />
-                    </div>
-                </div>-->
-                <!--<div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Data da Solicitação</span>
-                        </div>
-                        <input type="date" class="form-control" name="dataInicial" id="dataInicial" value="" />
-                    </div>
-                </div>-->
-                <!--<img src="https://i.gifer.com/AyeK.gif" image-size: class="hidden" id="Unicorn">-->
-
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">CEP Origem</span>
-                        </div>
-                        <input type="text" class="form-control" name="cepOrigem" id="cepOrigem" placeholder="CEP Remetente" value="89037300" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">CEP Destino</span>
-                        </div>
-                        <input type="text" class="form-control" name="cepDestino" id="cepDestino" placeholder="CEP Entrega" value="89066120" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Entrega</span>
-                        </div>
-                        <select name="codServico" id="codServico">
-                            <option value="04014">SEDEX à vista</option>
-                            <option value="04065">SEDEX à vista pagamento na entrega</option>
-                            <option value="04510">PAC à vista</option>
-                            <option value="04707">PAC à vista pagamento na entrega</option>
-                            <option value="40169">SEDEX 12 ( à vista e a faturar)*</option>
-                            <option value="40215">SEDEX 10 (à vista e a faturar)*</option>
-                            <option value="40290">SEDEX Hoje Varejo*</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Embalagem</span>
-                        </div>
-                        <select name="nCdFormato" id="nCdFormato">
-                            <option value="1">Formato caixa/pacote</option>
-                            <option value="2">Formato rolo/prisma</option>
-                            <option value="3">Envelope</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Peso</span>
-                        </div>
-                        <input type="text" class="form-control" name="peso" id="peso" placeholder=" Peso em quilogramas da entrega" value="10" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">C*A*L</span>
-                        </div>
-                        c <input type="text" class="form-control" name="comprimento" id="comprimento" placeholder="comp." value="20" />
-                        a <input type="text" class="form-control" name="altura" id="altura" placeholder="alt." value="20" />
-                        l <input type="text" class="form-control" name="largura" id="largura" placeholder="larg" value="20" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Mão Própria</span>
-                        </div>
-                        <select name="maopropria" id="maopropria">
-                            <option value="S">Sim</option>
-                            <option value="N">Não</option>
-                        </select>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Aviso de Recebimento</span>
-                        </div>
-                        <select name="avisoRec" id="avisoRec">
-                            <option value="S">Sim</option>
-                            <option value="N">Não</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Valor Declarado</span>
-                        </div>
-                        <input type="number" class="form-control" name="valorDeclarado" id="valorDeclarado" value="0" /> <!--informar '0' = não-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                        </div>
-                        <input type="button" class="w-50 mb-6 btn btn-warning form-group" name="bt1" id="bt1" data-toggle="modal" data-target="#exampleModal" value="Calcular" />
-
-                    </div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Dados da Entrega</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                <form name="formenviar" method="get" send-post="indexResult">
+                    <!--<img src="https://i.gifer.com/AyeK.gif" image-size: class="hidden" id="Unicorn">-->
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">CEP Origem</span>
                             </div>
-                            <div class="modal-body" id="modal-body">
-                                <div>Prazo: <span name="prazo"></span></div>
-                                <div>Valor: <span name="valor"></span></div>
-                                <div>Cidade: <span name="cidade"></span></div>
-                                <div>Bairro: <span name="bairro"></span></div>
-                                <div>Logradouro: <span name="logradouro"></span></div>
-                                <div>Entregar Pessoalmente : <span name="entregaPessoalmente"></span></div>
+                            <input type="text" class="form-control" name="cepOrigem" id="cepOrigem" placeholder="CEP Remetente" value="89037300" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">CEP Destino</span>
                             </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <input type="text" class="form-control" name="cepDestino" id="cepDestino" placeholder="CEP Entrega" value="89066120" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Entrega</span>
+                            </div>
+                            <select name="codServico" id="codServico">
+                                <option value="04014">SEDEX à vista</option>
+                                <option value="04065">SEDEX à vista pagamento na entrega</option>
+                                <option value="04510">PAC à vista</option>
+                                <option value="04707">PAC à vista pagamento na entrega</option>
+                                <option value="40169">SEDEX 12 ( à vista e a faturar)*</option>
+                                <option value="40215">SEDEX 10 (à vista e a faturar)*</option>
+                                <option value="40290">SEDEX Hoje Varejo*</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text ">Embalagem</span>
+                            </div>
+                            <select name="nCdFormato" id="nCdFormato">
+                                <option value="1">Formato caixa/pacote</option>
+                                <option value="2">Formato rolo/prisma</option>
+                                <option value="3">Envelope</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Peso</span>
+                            </div>
+                            <input type="text" class="form-control" name="peso" id="peso" placeholder=" Peso em quilogramas da entrega" value="10" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">C*A*L</span>
+                            </div>
+                            c <input type="text" class="form-control" name="comprimento" id="comprimento" placeholder="comp." value="20" />
+                            a <input type="text" class="form-control" name="altura" id="altura" placeholder="alt." value="20" />
+                            l <input type="text" class="form-control" name="largura" id="largura" placeholder="larg" value="20" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Mão Própria</span>
+                            </div>
+                            <select name="maopropria" id="maopropria">
+                                <option value="S">Sim</option>
+                                <option value="N">Não</option>
+                            </select>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Aviso de Recebimento</span>
+                            </div>
+                            <select name="avisoRec" id="avisoRec">
+                                <option value="S">Sim</option>
+                                <option value="N">Não</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Valor Declarado</span>
+                            </div>
+                            <input type="number" class="form-control" name="valorDeclarado" id="valorDeclarado" value="0" /> <!--informar '0' = não-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input type="button" class="w-50 mb-6 btn btn-warning form-group" name="bt1" id="bt1" data-toggle="modal" data-target="#exampleModal" value="Calcular" />
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Dados da Entrega</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" id="modal-body">
+                                    <div>Prazo: <span name="prazo"></span></div>
+                                    <div>Valor: <span name="valor"></span></div>
+                                    <div>Cidade: <span name="cidade"></span></div>
+                                    <div>Bairro: <span name="bairro"></span></div>
+                                    <div>Logradouro: <span name="logradouro"></span></div>
+                                    <div>Entregar Pessoalmente : <span name="entregaPessoalmente"></span></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -199,6 +161,5 @@
 
         });
     </script>-->
-
 </body>
 </html>
