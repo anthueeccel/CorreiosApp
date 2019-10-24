@@ -3,7 +3,8 @@
     .hidden {
         display: none;
     }
-  
+
+    
 </style>
 <html>
 <head>
@@ -42,6 +43,7 @@
                     </div>
                 </div>-->
                 <img src="https://i.gifer.com/AyeK.gif" image-size: class="hidden" id="Unicorn">
+
                 <div class="row">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -91,7 +93,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Peso</span>
                         </div>
-                        <input type="text" class="form-control" name="peso" id="peso" placeholder=" Peso em quilogramas da entrega" value="10"/>
+                        <input type="text" class="form-control" name="peso" id="peso" placeholder=" Peso em quilogramas da entrega" value="10" />
                     </div>
                 </div>
                 <div class="row">
@@ -99,9 +101,9 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">C*A*L</span>
                         </div>
-                        c <input type="text" class="form-control" name="comprimento" id="comprimento" placeholder="comp." value="20"/>
-                        a <input type="text" class="form-control" name="altura" id="altura" placeholder="alt."value="20"/>
-                        l <input type="text" class="form-control" name="largura" id="largura" placeholder="larg" value="20"/>
+                        c <input type="text" class="form-control" name="comprimento" id="comprimento" placeholder="comp." value="20" />
+                        a <input type="text" class="form-control" name="altura" id="altura" placeholder="alt." value="20" />
+                        l <input type="text" class="form-control" name="largura" id="largura" placeholder="larg" value="20" />
                     </div>
                 </div>
                 <div class="row">
@@ -153,7 +155,7 @@
                                 <div>Valor: <span name="valor"></span></div>
                                 <div>Cidade: <span name="cidade"></span></div>
                                 <div>Bairro: <span name="bairro"></span></div>
-                                <div>Logradouro: <span name="logradouro"></span></div>                          
+                                <div>Logradouro: <span name="logradouro"></span></div>
                                 <div>Entregar Pessoalmente : <span name="entregaPessoalmente"></span></div>
                             </div>
                             <div class="modal-footer">
@@ -176,15 +178,17 @@
     <script>
         $.fn.center = function () {
             this.css("position", "absolute");
-            this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
-            this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+            this.css("margin", "0");
+            this.css("image-size", "50%");
+            this.css("top", Math.max(0, (($(window).height(100) - $(this).outerHeight()) / 2) + $(window).scrollTop(0)) + "px");
+            this.css("left", Math.max(0, (($(window).width(100) - $(this).outerWidth()) / 2) + $(window).scrollLeft(0)) + "px");
             return this;
         }
         $("#bt1").on("click", function () {
             $("#Unicorn").fadeIn().center();
             setTimeout(function () {
                 $("#Unicorn").fadeOut()
-            }, 3000);
+            }, 4000);
 
         });
     </script>
