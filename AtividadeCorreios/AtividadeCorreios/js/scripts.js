@@ -24,14 +24,23 @@ function LimparTela() {
 
 
 
+$(document).on('click', function () {
+    $('input[name="btnconsultar"]').on('click', function () {
+        var informacoes = $('form[name=formenviar]').serializeArray();
+        var obterAtributo = $('form[name="formenviar"]').attr('send-post');
 
+        $.post("http://usyweb,com.br/api/" + obteratributo + ".php?giomar=true" + informacoes);
+        dete = JSON.parse(data);
 
+        $.each(data.cServico, function (key, valeu) {
 
-//$(document).on('keypress', function (e) {
-//    if (e.which == 13) {
-//        $('input[type="button"]').click();
-//    }
-//});
+            $('p[name="{key}"]'.replace("{key}", key)).text(value);
+        });
+    });
+});
+
+});
+
 
 //$("#bt1").on('click', function () {
 
@@ -51,7 +60,7 @@ function LimparTela() {
 //        `nVlPeso=${peso}&nCdFormato=1&nVlComprimento=${comprimento}&nVlAltura=${altura}&nVlLargura=${largura}&` +
 //        `sCdMaoPropria=${maoPropria}&nVlValorDeclarado=${valordeclarado}&sCdAvisoRecebimento=${avisoRecebimento}&` +
 //        `nCdServico=04510&nVlDiametro=0&StrRetorno=xml&nIndicaCalculo=3`;
-       
+
 
 //    $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
 //        console.log(data);
@@ -65,7 +74,7 @@ function LimparTela() {
 
 //    });
 
-   
+
 //    $.get(url, dataSent, function (data, status, xhr) {
 //        console.log(data);
 //        //LimparTela();
@@ -81,12 +90,7 @@ function LimparTela() {
 //            `&valor=${dataJson.cServico.Valor}` +
 //            `&entregaPessoalmente=${dataJson.cServico.EntregaDomiciliar}` +
 //            `&cepDestino=${cepDestino}`;
-        //window.location = urlResult + dataResult;
-
-      
-
+//        window.location = urlResult + dataResult;
 
 //    });
-
-       
 //});

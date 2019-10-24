@@ -19,7 +19,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">CEP Origem</span>
                             </div>
-                            <input type="text" class="form-control" name="cepOrigem" id="cepOrigem" placeholder="CEP Remetente" value="89037300" />
+                            <input type="text" class="form-control" name="sCepOrigem" id="cepOrigem" placeholder="CEP Remetente" value="89037300" />
                         </div>
                     </div>
                     <div class="row">
@@ -27,7 +27,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">CEP Destino</span>
                             </div>
-                            <input type="text" class="form-control" name="cepDestino" id="cepDestino" placeholder="CEP Entrega" value="89066120" />
+                            <input type="text" class="form-control" name="sCepDestino" id="cepDestino" placeholder="CEP Entrega" value="89066120" />
                         </div>
                     </div>
                     <div class="row">
@@ -35,10 +35,10 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Entrega</span>
                             </div>
-                            <select name="codServico" id="codServico" value=04510>
+                            <select name="nCdServico" id="codServico">
+                                <option value="04510">PAC à vista</option>
                                 <option value="04014">SEDEX à vista</option>
                                 <option value="04065">SEDEX à vista pagamento na entrega</option>
-                                <option value="04510">PAC à vista</option>
                                 <option value="04707">PAC à vista pagamento na entrega</option>
                                 <option value="40169">SEDEX 12 ( à vista e a faturar)*</option>
                                 <option value="40215">SEDEX 10 (à vista e a faturar)*</option>
@@ -63,7 +63,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Peso</span>
                             </div>
-                            <input type="text" class="form-control" name="peso" id="peso" placeholder=" Peso em quilogramas da entrega" value="10" />
+                            <input type="text" class="form-control" name="nVlPeso" id="peso" placeholder=" Peso em quilogramas da entrega" value="10" />
                         </div>
                     </div>
                     <div class="row">
@@ -71,9 +71,9 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">C*A*L</span>
                             </div>
-                            c <input type="text" class="form-control" name="comprimento" id="comprimento" placeholder="comp." value="20" />
-                            a <input type="text" class="form-control" name="altura" id="altura" placeholder="alt." value="20" />
-                            l <input type="text" class="form-control" name="largura" id="largura" placeholder="larg" value="20" />
+                            c <input type="text" class="form-control" name="nVlComprimento" id="comprimento" placeholder="comp." value="20" />
+                            a <input type="text" class="form-control" name="nVlAltura" id="altura" placeholder="alt." value="20" />
+                            l <input type="text" class="form-control" name="nVlLargura" id="largura" placeholder="larg" value="20" />
                         </div>
                     </div>
                     <div class="row">
@@ -81,14 +81,14 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Mão Própria</span>
                             </div>
-                            <select name="maopropria" id="maopropria">
+                            <select name="sCdMaoPropria" id="maopropria">
                                 <option value="S">Sim</option>
                                 <option value="N">Não</option>
                             </select>
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Aviso de Recebimento</span>
                             </div>
-                            <select name="avisoRec" id="avisoRec">
+                            <select name="sCdAvisoRecebimento" id="avisoRec">
                                 <option value="S">Sim</option>
                                 <option value="N">Não</option>
                             </select>
@@ -99,7 +99,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Valor Declarado</span>
                             </div>
-                            <input type="number" class="form-control" name="valorDeclarado" id="valorDeclarado" value="0" /> <!--informar '0' = não-->
+                            <input type="number" class="form-control" name="nVlValorDeclarado" id="valorDeclarado" value="0" /> <!--informar '0' = não-->
                         </div>
                     </div>
                     <div class="row">
@@ -133,6 +133,9 @@
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" name="nVlDiametro" value="0" />
+                    <input type="hidden" name="StrRetorno" value="xml" />
+                    <input type="hidden" name="nIndicaCalculo" value="3" />
                 </form>
             </div>
         </div>
