@@ -30,7 +30,7 @@ $("#bt1").on('click', function () {
         `nVlPeso=${peso}&nCdFormato=1&nVlComprimento=${comprimento}&nVlAltura=${altura}&nVlLargura=${largura}&` +
         `sCdMaoPropria=${maoPropria}&nVlValorDeclarado=${valordeclarado}&sCdAvisoRecebimento=${avisoRecebimento}&` +
         `nCdServico=04510&nVlDiametro=0&StrRetorno=xml&nIndicaCalculo=3`;
-
+       
 
     $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
         console.log(data);
@@ -44,6 +44,7 @@ $("#bt1").on('click', function () {
 
     });
 
+   
     $.get(url, dataSent, function (data, status, xhr) {
         console.log(data);
         //LimparTela();
@@ -53,13 +54,18 @@ $("#bt1").on('click', function () {
         $('span[name="prazo"]').text(dataJson.cServico.PrazoEntrega + " dias");
         $('span[name="valor"]').text(dataJson.cServico.Valor);
         $('span[name="entregaPessoalmente"]').text(dataJson.cServico.EntregaDomiciliar);
-                  
+
         var urlResult = `indexResult.html?`;
         var dataResult = `prazo=${dataJson.cServico.PrazoEntrega}` +
             `&valor=${dataJson.cServico.Valor}` +
             `&entregaPessoalmente=${dataJson.cServico.EntregaDomiciliar}` +
             `&cepDestino=${cepDestino}`;
         window.location = urlResult + dataResult;
+
+      
+
+
     });
-   
+
+       
 });
