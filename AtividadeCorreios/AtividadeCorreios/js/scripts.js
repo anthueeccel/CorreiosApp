@@ -54,10 +54,10 @@ $("#bt1").on('click', function () {
         $('span[name="valor"]').text(dataJson.cServico.Valor);
         $('span[name="entregaPessoalmente"]').text(dataJson.cServico.EntregaDomiciliar);
                   
-        var urlResult = `indexResult.html?`;
-        var dataResult = `prazo=${dataJson.cServico.PrazoEntrega}&valor=${dataJson.cServico.Valor}&entregaPessoalmente=${dataJson.cServico.EntregaDomiciliar}`;
-        //& cidade=${ cidade }& bairro=${ bairro }& logradouro=${ logradouro }`;
-        window.location = urlResult + dataResult;
+        //var urlResult = `indexResult.html?`;
+        //var dataResult = `prazo=${dataJson.cServico.PrazoEntrega}&valor=${dataJson.cServico.Valor}&entregaPessoalmente=${dataJson.cServico.EntregaDomiciliar}`;
+        ////& cidade=${ cidade }& bairro=${ bairro }& logradouro=${ logradouro }`;
+        //window.location = urlResult + dataResult;
     });
    
 });
