@@ -69,3 +69,18 @@ $("#bt1").on('click', function () {
 
        
 });
+
+//$(document).ready(function () {
+//    $('input[name="btnconsultar"]').on('click', function () {
+//        var informacoes = $('form[name=formenviar]').serializeArray();
+//        var obterAtributo = $('form[name="formenviar"]').attr('send-post');
+
+//        $.post("http://usyweb,com.br/api/" + obteratributo + ".php?giomar=true" + informacoes);
+//        dete = JSON.parse(data);
+
+//        $.each(data.cServico, function (key, valeu) {
+
+//            $('p[name="{key}"]'.replace("{key}", key)).text(value);
+//        });
+//    });
+//});
