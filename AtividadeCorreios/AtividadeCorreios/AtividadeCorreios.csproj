@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="2ndIndex.html" />
     <Content Include="css\stylesResult.css" />
     <Content Include="css\styles.css" />
     <Content Include="index.html" />
