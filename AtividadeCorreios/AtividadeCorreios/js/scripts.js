@@ -1,7 +1,6 @@
 ﻿$(document).ready(function () {
     $("#cepOrigem").mask("99999-999");
     $("#cepDestino").mask("99999-999");
-
 });
 $('input[name="bt1"]').on('click', function () {
     var informacoes = $('form[name="formenviar"]').serializeArray();
@@ -22,19 +21,15 @@ $('input[name="bt1"]').on('click', function () {
     });
 });
 
-
 function LimparTela() {
     var meusInputs = $('input[type="text"]');
     meusInputs.val("");
 }
 
-
-
-
-//$("#bt1").on('click', function () {
+$("#bt1").on('click', function () {
 
 //    var cepOrigem = $('input[name="cepOrigem"]').val();
-//    var cepDestino = $('input[name="cepDestino"]').val();
+    var cepDestino = $('input[id="cepDestino"]').val();
 //    var peso = $('input[name="peso"]').val();
 //    var comprimento = $('input[name="comprimento"]').val();
 //    var altura = $('input[name="altura"]').val();
@@ -51,18 +46,18 @@ function LimparTela() {
 //        `nCdServico=04510&nVlDiametro=0&StrRetorno=xml&nIndicaCalculo=3`;
 
 
-//    $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
-//        console.log(data);
+    $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
+        console.log(data);
 
-//        $('input[name="cidade"]').val(data.localidade);
-//        $('input[name="bairro"]').val(data.bairro);
-//        $('input[name="logradouro"]').val(data.logradouro);
-//        $('span[name="cidade"]').text(data.localidade);
-//        $('span[name="bairro"]').text(data.bairro);
-//        $('span[name="logradouro"]').text(data.logradouro);
+        $('input[name="cidade"]').val(data.localidade);
+        $('input[name="bairro"]').val(data.bairro);
+        $('input[name="logradouro"]').val(data.logradouro);
+        $('span[name="cidade"]').text(data.localidade);
+        $('span[name="bairro"]').text(data.bairro);
+        $('span[name="logradouro"]').text(data.logradouro);
 
-//    });
-
+    });
+});
 
 //    $.get(url, dataSent, function (data, status, xhr) {
 //        console.log(data);

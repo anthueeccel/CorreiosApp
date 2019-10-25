@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -15,7 +14,7 @@
                 <form name="formenviar" method="get" send-post="correiosambev">
                     <!--<img src="https://i.gifer.com/AyeK.gif" image-size: class="hidden" id="Unicorn">-->
                     <div class="row">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">CEP Origem</span>
                             </div>
@@ -23,7 +22,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">CEP Destino</span>
                             </div>
@@ -31,11 +30,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Entrega</span>
                             </div>
-                            <select name="nCdServico" id="codServico">
+                            <select class="form-control" name="nCdServico" id="codServico">
                                 <option value="04510">PAC à vista</option>
                                 <option value="04014">SEDEX à vista</option>
                                 <option value="04065">SEDEX à vista pagamento na entrega</option>
@@ -47,11 +46,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <div class="input-group-prepend">
-                                <span class="input-group-text ">Embalagem</span>
+                                <span class="input-group-text">Embalagem</span>
                             </div>
-                            <select name="nCdFormato" id="nCdFormato" value=1>
+                            <select class="form-control" name="nCdFormato" id="nCdFormato">
                                 <option value="1">Formato caixa/pacote</option>
                                 <option value="2">Formato rolo/prisma</option>
                                 <option value="3">Envelope</option>
@@ -59,43 +58,45 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Peso</span>
                             </div>
-                            <input type="text" class="form-control" name="nVlPeso" id="peso" placeholder=" Peso em quilogramas da entrega" value="10" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="nVlPeso" id="peso" placeholder=" Kg" value="10" />
                             <div class="input-group-prepend">
-                                <span class="input-group-text">C*A*L</span>
+                                <span class="input-group-text">C</span>
                             </div>
-                            c <input type="text" class="form-control" name="nVlComprimento" id="comprimento" placeholder="comp." value="20" />
-                            a <input type="text" class="form-control" name="nVlAltura" id="altura" placeholder="alt." value="20" />
-                            l <input type="text" class="form-control" name="nVlLargura" id="largura" placeholder="larg" value="20" />
+                            <input type="text" class="form-control" name="nVlComprimento" id="comprimento" placeholder="comp." value="20" />
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">A</span>
+                            </div>
+                            <input type="text" class="form-control" name="nVlAltura" id="altura" placeholder="alt." value="20" />
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">L</span>
+                            </div>
+                            <input type="text" class="form-control" name="nVlLargura" id="largura" placeholder="larg" value="20" />
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Mão Própria</span>
                             </div>
-                            <select name="sCdMaoPropria" id="maopropria">
+                            <select class="form-control" name="sCdMaoPropria" id="maopropria">
                                 <option value="S">Sim</option>
                                 <option value="N">Não</option>
                             </select>
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Aviso de Recebimento</span>
                             </div>
-                            <select name="sCdAvisoRecebimento" id="avisoRec">
+                            <select class="form-control" name="sCdAvisoRecebimento" id="avisoRec">
                                 <option value="S">Sim</option>
                                 <option value="N">Não</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Valor Declarado</span>
                             </div>
@@ -103,41 +104,40 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-6">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="button" class="w-50 mb-6 btn btn-warning form-group" name="bt1" id="bt1" data-toggle="modal" data-target="#exampleModal" value="Calcular" />
-                        </div>
-                    </div>
-                </form>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Dados da Entrega</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body" id="modal-body">
-                                    <div>Prazo: <span name="PrazoEntrega"></span></div>
-                                    <div>Valor: <span name="Valor"></span></div>
-                                    <div>Cidade: <span name="cidade"></span></div>
-                                    <div>Bairro: <span name="bairro"></span></div>
-                                    <div>Logradouro: <span name="logradouro"></span></div>
-                                    <div>Entregar Pessoalmente : <span name="EntregaDomiciliar"></span></div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                </div>
-                            </div>
+                            <input type="button" class="w-100 mb-6 btn btn-warning form-group" name="bt1" id="bt1" data-toggle="modal" data-target="#exampleModal" value="Calcular" />
                         </div>
                     </div>
                     <input type="hidden" name="nVlDiametro" value="0" />
                     <input type="hidden" name="StrRetorno" value="xml" />
                     <input type="hidden" name="nIndicaCalculo" value="3" />
-                
+                </form>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Dados da Entrega</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="modal-body">
+                                <div>Prazo: <span name="PrazoEntrega"></span></div>
+                                <div>Valor: <span name="Valor"></span></div>
+                                <div>Entregar Pessoalmente : <span name="EntregaDomiciliar"></span></div>
+                                <div>Cidade: <span name="cidade"></span></div>
+                                <div>Bairro: <span name="bairro"></span></div>
+                                <div>Logradouro: <span name="logradouro"></span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
             </div>
         </div>
     </div>
