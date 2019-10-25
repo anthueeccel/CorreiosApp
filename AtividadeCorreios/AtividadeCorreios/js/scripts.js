@@ -1,8 +1,24 @@
 ﻿$(document).ready(function () {
     $("#cepOrigem").mask("99999-999");
     $("#cepDestino").mask("99999-999");
+    //$("#bt1").attr("disabled", true);
 
+    var $input = $('#formenviar input:text');
+        $bt1 = $('input[name="bt1"]');
+    $bt1.attr('disabled', true);
+
+    $input.keyup(function () {
+        var trigger = false;
+        $input.each(function () {
+            if (!$(this).val()) {
+                trigger = true;
+            }
+        });
+        trigger ? $bt1.attr('disabled', true) : $bt1.removeAttr('disabled');
+    });
 });
+
+
 $('input[name="bt1"]').on('click', function () {
     var informacoes = $('form[name="formenviar"]').serializeArray();
     var obterAtributo = $('form[name="formenviar"]').attr('send-post');
@@ -51,17 +67,16 @@ function LimparTela() {
 //        `nCdServico=04510&nVlDiametro=0&StrRetorno=xml&nIndicaCalculo=3`;
 
 
-//    $.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
-//        console.log(data);
+    //$.getJSON("https://viacep.com.br/ws/" + cepDestino + "/json/", function (data, status) {
+    //    console.log(data);
 
-//        $('input[name="cidade"]').val(data.localidade);
-//        $('input[name="bairro"]').val(data.bairro);
-//        $('input[name="logradouro"]').val(data.logradouro);
-//        $('span[name="cidade"]').text(data.localidade);
-//        $('span[name="bairro"]').text(data.bairro);
-//        $('span[name="logradouro"]').text(data.logradouro);
-
-//    });
+    //    $('input[name="cidade"]').val(data.localidade);
+    //    $('input[name="bairro"]').val(data.bairro);
+    //    $('input[name="logradouro"]').val(data.logradouro);
+    //    $('span[name="cidade"]').text(data.localidade);
+    //    $('span[name="bairro"]').text(data.bairro);
+    //    $('span[name="logradouro"]').text(data.logradouro);
+    //});
 
 
 //    $.get(url, dataSent, function (data, status, xhr) {
