@@ -2,21 +2,33 @@
     $("#cepOrigem").mask("99999-999");
     $("#cepDestino").mask("99999-999");
 
-    $('input[name="bt1"]').click(function () {
-        var informacoes = $('form[name="formenviar"]').serializeArray();
-        var obterAtributo = $('form[name="formenviar"]').attr('send-post');
+});
+$('input[name="bt1"]').on('click', function () {
+    var informacoes = $('form[name="formenviar"]').serializeArray();
+    var obterAtributo = $('form[name="formenviar"]').attr('send-post');
 
-        $.post("http://usysweb.com.br/api/" + obterAtributo + ".php?giomar=true", informacoes, function (data) {
-            data = JSON.parse(data);
-            console.log(data);
-            $.each(data.cServico, function (key, value) {
-
-                $('span[name="{key}"]'.replace("{key}", key)).text(value);
-            });
+    $.post("http://usysweb.com.br/api/" + obterAtributo + ".php?giomar=true", informacoes, function (data) {
+        data = JSON.parse(data);
+        console.log(data);
+        $.each(data.cServico, function (key, value) {
+            if (key === "EntregaDomiciliar") {
+                if (value === "S")
+                    value = "Sim";
+                else
+                    value = "Não";
+            }
+            $('span[name="{key}"'.replace("{key}", key)).text(value);
         });
     });
-
 });
+
+
+function LimparTela() {
+    var meusInputs = $('input[type="text"]');
+    meusInputs.val("");
+}
+
+
 
 
 //$("#bt1").on('click', function () {
@@ -67,7 +79,7 @@
 //            `&valor=${dataJson.cServico.Valor}` +
 //            `&entregaPessoalmente=${dataJson.cServico.EntregaDomiciliar}` +
 //            `&cepDestino=${cepDestino}`;
-//        window.location = urlResult + dataResult;  
+//        window.location = urlResult + dataResult;
 
 //    });
 //});
